@@ -7,7 +7,7 @@ export default class Store extends React.Component {
     render() {
         return (
             <Layout {...this.props}>
-            <main className={'content' + (_.get(this.props, 'page.frontmatter.page_css_class', null) ? (' ' + _.get(this.props, 'page.frontmatter.page_css_class', null)) : '')}>
+            <main className={'content' + (_.get(this.props, 'page.frontmatter.page_css_class', null) ? (' ' + _.get(this.props, 'page.frontmatter.page_css_class',)) : '')}>
                 {_.map(_.get(this.props, 'page.frontmatter.sections', null), (section, section_idx) => {
                     let component = _.upperFirst(_.camelCase(_.get(section, 'type', null)));
                     let Component = components[component];
